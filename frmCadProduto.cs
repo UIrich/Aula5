@@ -138,6 +138,7 @@ namespace Aula5
             {
                 e.Cancel = true;
                 errProvider.SetError(cboGrupo, "Selecione o grupo.");
+         
             }
             else
             {
@@ -151,7 +152,7 @@ namespace Aula5
             if (string.IsNullOrEmpty(txtPrecoVenda.Text))
             {
                 e.Cancel = true;
-                errProvider.SetError(cboGrupo, "Preencha o preço.");
+                errProvider.SetError(txtPrecoVenda, "Preencha o preço.");
             }
             else
             {

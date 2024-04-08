@@ -75,6 +75,7 @@
             // 
             // cboUnidade
             // 
+            this.cboUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUnidade.FormattingEnabled = true;
             this.cboUnidade.Items.AddRange(new object[] {
             "UN",
@@ -99,6 +100,7 @@
             // 
             // cboGrupo
             // 
+            this.cboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGrupo.FormattingEnabled = true;
             this.cboGrupo.Items.AddRange(new object[] {
             "Bebidas",
