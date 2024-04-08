@@ -94,18 +94,6 @@ namespace Aula5
                 e.Cancel = true;
                 errProvider.SetError(mskCodBarra, "Preencha o código.");
             }
-            else
-            {
-                e.Cancel = false;
-                errProvider.SetError(mskCodBarra, "");
-            }
-
-            if (string.IsNullOrEmpty(numero))
-            {
-                e.Cancel = true;
-                errProvider.SetError(mskCodBarra, "Preencha o código.");
-            }
-
             else if (numero.Length != 13)
             {
                 e.Cancel = true;
@@ -154,21 +142,25 @@ namespace Aula5
                 e.Cancel = true;
                 errProvider.SetError(txtPrecoVenda, "Preencha o preço.");
             }
-            else
-            {
-                e.Cancel = false;
-                errProvider.SetError(txtPrecoVenda, "");
-            }
-
-            if (IsNumber(txtPrecoVenda.Text))
-            {
-                e.Cancel = false;
-                errProvider.SetError(txtPrecoVenda, "");
-            }
-            else
+            else if (!IsNumber(txtPrecoVenda.Text))
             {
                 e.Cancel = true;
                 errProvider.SetError(txtPrecoVenda, "Preencha com números.");
+            }
+            else
+            {
+                int preco = int.Parse(txtPrecoVenda.Text);
+
+                if (preco <= 0)
+                {
+                    e.Cancel = true;
+                    errProvider.SetError(txtPrecoVenda, "Preencha o preço com um número maior que 0.");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errProvider.SetError(txtPrecoVenda, "");
+                }
             }
         }
     }
